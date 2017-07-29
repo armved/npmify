@@ -9,11 +9,12 @@ const PackageList = (props) => {
   } else if (props.packages.length > 0) {
     content = (
       <div>
-        {props.packages.map(pkg => (
+        {props.packages.map(objects => (
           <PackageCard
-            title={pkg.package.name}
-            subtitle={pkg.package.description}
-            version={pkg.package.version}
+            key={objects.package.name}
+            title={objects.package.name}
+            subtitle={objects.package.description}
+            version={objects.package.version}
           />
         ))}
       </div>

@@ -1,23 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardText, CardTitle } from 'material-ui/Card';
+import { Link } from 'react-router-dom';
+
 
 const PackageCard = props => (
   <div>
     <Card>
-      <CardHeader
-        title={props.title}
+      <CardTitle
+        title={<Link className="link" to={props.title}>{props.title}</Link>}
         subtitle={props.subtitle}
       />
       <CardText>{props.version}</CardText>
     </Card>
   </div>
 );
-
-PackageCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  version: PropTypes.string.isRequired,
-};
 
 export default PackageCard;
